@@ -106,7 +106,7 @@ function PLOT(){
     colorscale:"YlGnBu",
     scene: {
       aspectratio: {
-       x: 1.5, y: 1.5, z: 1,
+       x: 1.5, y: 1.5, z: 1.5,
       },
       camera: {
           center: {
