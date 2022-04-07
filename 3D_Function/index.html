@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Complex Graphs</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Complex 3D Graphing Calculator</h1>
+  <p>Plot any 3d function in the form f(x, y) (Complex supported). <br>
+    Make sure to always use operators even for multiplication and remember to <br>
+  use abs for complex numbers. Natural Logarithm is log. It may take a while to graph so be patient</p>
+  <p> <a href="/">Home</a> </p>
+
+  <script>
+    function setPeak(){
+      document.getElementById("func").value = "e^(-(y+1)^2 -x^2) * (x-1)^2 - (e^(-(x+1)^2 -y^2)) + e^(-x^2-y^2) * (5*x^3 - 2*x + 5*y^5)"
+      PLOT()   
+    }
+    function setGamma(){
+      document.getElementById("func").value = "abs(gamma(x+yi))"
+      PLOT()
+    }
+    
+  </script>
+  <button onclick="setPeak()">Peaks Function</button>
+  <br>
+  <button onclick="setGamma()">Gamma Function</button>
+  <br>
+  <label for="name">f(x, y)=</label>
+  <input type="text" id="func" value="abs(gamma(x+yi))">
+  <button onclick="PLOT()">Graph</button>
+  <br>
+  <label for="z_low">z_low=</label>
+  <input type="text" id="z_low" value="-5">
+  <label for="z_high">z_high=</label>
+  <input type="text" id="z_high" value="5">
+
+  <br>
+  <label for="y_low">y_low=</label>
+  <input type="text" id="y_low" value="-6">
+  <label for="y_high">y_high=</label>
+  <input type="text" id="y_high" value="6">
+
+  <br>
+  <label for="x_low">x_low=</label>
+  <input type="text" id="x_low" value="-6">
+  <label for="x_high">x_high=</label>
+  <input type="text" id="x_high" value="6">
+
+  <script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.2/d3.min.js" integrity="sha512-3lwhBbuZju4M2+VWgp4BEisEYHToIvEte8a3Ygg1EmtXKFWkHCc6aNvAaQdztsPBSdxbF2i2UVbaxke62tc6tA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.4.2/math.min.js" integrity="sha512-8tb1P2USXYzay395iBOA30Jm/ZCyXYZDziXCLZSIEz6QWuIaH3Q3zAVGtWCCtz49i920bI7kRI7+bgw1H+6wPw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <div id="graph" style="width: 1500; height: 600"></div>
+  <script src="script.js"></script>
+  <script src="on.js"></script>
+  
+</body>
+
+</html>
